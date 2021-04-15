@@ -1,3 +1,4 @@
+<img src="https://github.com/mateomartinez510/Eluvio/blob/f901c910727bfda37d783d81419929eb9385863d/images/social_media.jpg" alt="social_media_image" width="75%" height="75%"/>
 ## Coding Challenge: Option 1 - Data Science/ML
 
 In the Data Wrangling/EDA(LINK) notebook I cleaned the dataset, removing null values/columns, extracted additional features from the date and title columns, and performed a cursory analysis on all of the features in the dataset. 
