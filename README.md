@@ -3,7 +3,7 @@
 </p>
 ## Coding Challenge: Option 1 - Data Science/ML
 
-TL:DR
+TL:DR <br>
 [Data Analysis & Notebook](https://www.nba.com/stats/) <br>
 [1st Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "over_18") <br>
 [2nd Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "nsfc", a new feature created to better capture all content "Not Suitable For Children") <br>
@@ -11,6 +11,17 @@ TL:DR
 In the Data Wrangling/EDA(LINK) notebook I cleaned the dataset, removing null values/columns, extracted additional features from the date and title columns, and performed a cursory analysis on all of the features in the dataset. Below is the first five rows of the dataset after wrangling.
 
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/wrangled_dataframe.png" alt="wrangled_dataframe"/>
+
+The main focus of this analysis was to create predictive model to classify posts as having graphic content not suitable for children. The explanatory variable for this model is text within the "title" column. Below are a few visualizations from the EDA process.
+
+In this first plot, we can see the number of "over_18" posts by year. we see a general trend showing an increase in "over_18" posts per year, which generally corresponds to an overall increase in annual posts. 
+<img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/over_18_posts_by_year.png" alt="over_18_posts_by_year" width="75%" height="75%"/>
+
+In this next plot, we can see the distribution of characters counts per post, as a histogram and KDE plot. This right skewed distribution shows that the majority of posts contain less than 100 characters, with a minority containing up to 300 characters. For computational efficiency, the deep learning model trimmed all posts to 150 characters.
+<img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/char_count_kde_histogram.png" alt="char_count" width="75%" height="75%"/>
+ 
+In the modeling process, we utilized a Bidirectional Encoder Representations from Transformers model (BERT) that created words embeddings to feed into a Keras Tensorflow Sequential model with a pretrained BERT model containing 12-layers, 768-hidden, 12-heads, and 110M parameters. However, as part of the EDA process, we created a TF-IDF vectorized dataset to analyze the most and least frequent terms. Below are plots of the most frequent terms in the whole dataset, and then filtered by "over_18" posts.
+<img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/most_common_words_by_tf_idf_vectors.png" alt="tf_idf_common_words" width="75%" height="75%"/>
 
 After completing EDA and some exploratory modeling, I determined that complexity of applying NLP to the "title" feature required a deep learning framework, and conceded that my initial attempt at applying traditional models with a TF-IDF vectors was unsuccessful. My initial intent was to use a BERT deep learning model to predictive the number of "up_votes" a post received, but after numerous attempts of model tuning, the algorithm would only predict values very close to be mean, and determined in this use case (and in general) that the BERT model is not suited for linear regression. 
 
