@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="https://github.com/mateomartinez510/Eluvio/blob/f901c910727bfda37d783d81419929eb9385863d/images/social_media.jpg" alt="social_media_image" width="75%" height="75%"/>
+  <img src="https://github.com/mateomartinez510/Eluvio/blob/f901c910727bfda37d783d81419929eb9385863d/images/social_media.jpg" alt="social_media_image"/>
 </p>
 ## Coding Challenge: Option 1 - Data Science/ML
 
 TL:DR
-Data Analysis & Notebook (link)
-1st Predictive Modeling Notebook (target variable: "over_18")
-2nd Predictive Modeling Notebook (target variable: "nsfc", a new feature created to better capture all content "Not Suitable For Children")
+[Data Analysis & Notebook](https://www.nba.com/stats/) 
+[1st Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "over_18")
+[2nd Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "nsfc", a new feature created to better capture all content "Not Suitable For Children")
 
 In the Data Wrangling/EDA(LINK) notebook I cleaned the dataset, removing null values/columns, extracted additional features from the date and title columns, and performed a cursory analysis on all of the features in the dataset. Below is the first five rows of the dataset after wrangling.
 
