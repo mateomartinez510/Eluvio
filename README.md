@@ -5,9 +5,9 @@
 <h3>Coding Challenge: Option 1 - Data Science/ML</h3>
 
 TL,DR: check out the three notebooks below for the Data Wrangling and two predictive models I trained:<br>
-[Data Analysis & Notebook](https://www.nba.com/stats/) <br>
-[1st Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "over_18") <br>
-[2nd Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "nsfc", a new feature created to better capture all content "Not Suitable For Children") <br>
+[1. Data Analysis & Notebook](https://www.nba.com/stats/) <br>
+[2. Predictive Modeling Notebook I](https://www.nba.com/stats/) (target variable: "over_18") <br>
+[3. Predictive Modeling Notebook II](https://www.nba.com/stats/) (target variable: "nsfc", a new feature created to better capture all content "Not Suitable For Children") <br>
 
 In the Data Wrangling/EDA(LINK) notebook I cleaned the dataset, removing null values/columns, extracted additional features from the date and title columns, and performed a cursory analysis on all of the features in the dataset. Below is the first five rows of the dataset after wrangling.
 
