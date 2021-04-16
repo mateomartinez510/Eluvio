@@ -25,18 +25,17 @@ In this next plot, we can see the distribution of characters counts per post, as
 In the modeling process, utilized a Bidirectional Encoder Representations from Transformers model (BERT) that created words embeddings to feed into a Keras Tensorflow Sequential model with a pretrained BERT model containing 12-layers, 768-hidden, 12-heads, and 110M parameters. However, as part of the EDA process, we created a TF-IDF vectorized dataset to analyze the most and least frequent terms. Below are plots of the most frequent terms in the whole dataset, and then filtered by "over_18" posts.<br>
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/most_common_words_by_tf_idf_vectors.png" alt="tf_idf_common_words"/>
 
- ### [2. Predictive Model I](https://www.nba.com/stats/) <br>
+ ### [2. Predictive Model I: "over_18" Target Variable](https://www.nba.com/stats/) <br>
 Target variable: "over_18" feature <br>
 
 After completing EDA and some exploratory modeling, I determined that complexity of applying NLP to the "title" feature required a deep learning framework, and conceded that my initial attempt at applying traditional models with a TF-IDF vectors was unsuccessful. My initial intent was to use a BERT deep learning model to predictive the number of "up_votes" a post received, but after numerous attempts of model tuning, the algorithm would only predict values very close to be mean, and determined in this use case (and in general) that the BERT model is not suited for linear regression. Thus I changed my target dependent variable to "over_18" and used a BERT algorithm for the model. 
 
 Below is the model summary for the BERT model, which was used for both classifiers. After numerous iterations of model turning, what yielded the best results (optimizing for recall, given the lack of samples from the minority class) was a higher dropout rate, smaller proportion of samples from the majority class, and longer "max_len" for the BERT encoded word embeddings (attempts to use less than 150 characters yielded poor results, a longer length would be beneficial, but ultimately computationally too expensive for this analysis).
-<img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/bert_model_summary.png" alt="bert_model_summary"/>
+<img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/bert_model_summary.png" alt="bert_model_summary" width="50%" height="50%"/>
 
 Mention stacked model? Mention trim to 150 characters?
 
-### [3. Predictive Model II](https://www.nba.com/stats/) <br>
-Target variable: "nsfc" feature <br>
+### [3. Predictive Model II: "NSFC" Target Variable](https://www.nba.com/stats/) <br>
 
 Upon deeper analysis of the "over_18", it was clear this variable indicated if the content of a post contained an R/adult rating, generally denoted by the terms "NSFW","NFSL","Graphic", and "Graphic Warning". However we I reviewed the titles of posts without an "over_18" rating, many still contained "Graphic" "Warnings". Thus I created an additional variable: "nsfc" (Not Suitable For Children), that labeled all posts with the terms: "nsfw", "nsfl", "graphic", "kill", "execution" , "decapitation", "rape", and "dismember", which I believe more fully captures all content not suitable for children (this time model were to be put into production, business stakeholders would need to be consulted on final terms to qualify censorship).
 
