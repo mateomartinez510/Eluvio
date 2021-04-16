@@ -4,7 +4,7 @@
 
 <h3>Coding Challenge: Option 1 - Data Science/ML</h3>
 
-TL:DR <br>
+TL,DR: check out the three notebooks below for the Data Wrangling and two predictive models I trained:<br>
 [Data Analysis & Notebook](https://www.nba.com/stats/) <br>
 [1st Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "over_18") <br>
 [2nd Predictive Modeling Notebook](https://www.nba.com/stats/) (target variable: "nsfc", a new feature created to better capture all content "Not Suitable For Children") <br>
