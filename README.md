@@ -2,7 +2,7 @@
   <img src="https://github.com/mateomartinez510/Eluvio/blob/f901c910727bfda37d783d81419929eb9385863d/images/social_media.jpg" alt="social_media_image" width="75%" height="75%"/>
 </p>
 
-##Coding Challenge: Option 1 - Data Science/ML
+<h3>Coding Challenge: Option 1 - Data Science/ML</h3>
 
 TL:DR <br>
 [Data Analysis & Notebook](https://www.nba.com/stats/) <br>
