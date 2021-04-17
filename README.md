@@ -6,8 +6,9 @@
 
 TL,DR: check out the three notebooks below for the Data Wrangling and two predictive models I trained:<br>
 [1. Data Wrangling & EDA Notebook](https://www.nba.com/stats/) <br>
-[2. Predictive Modeling Notebook I](https://www.nba.com/stats/) (target variable: "over_18") <br>
-[3. Predictive Modeling Notebook II](https://www.nba.com/stats/) (target variable: "nsfc", a new feature created to better capture all content "Not Suitable For Children") <br>
+[2. Predictive Model I: "over_18" Target Variable](https://www.nba.com/stats/) <br>
+[3. Predictive Model II: "nsfc" Target Variable](https://www.nba.com/stats/) <br>
+("nsfc" is a new feature created to better capture all content "Not Suitable For Children") <br>
 
 ### 1. Data Wrangling & EDA(LINK)
 In thisnotebook I cleaned the dataset, removing null values/columns, extracted additional features from the date and title columns, and performed a cursory analysis on all of the features in the dataset. Below is the first five rows of the dataset after wrangling.
@@ -33,9 +34,9 @@ After completing EDA and some exploratory modeling, I determined that complexity
 Below is the model summary for the BERT model, which was used for both classifiers. After numerous iterations of model turning, what yielded the best results (optimizing for recall, given the lack of samples from the minority class) was a higher dropout rate, smaller proportion of samples from the majority class, and longer "max_len" for the BERT encoded word embeddings (attempts to use less than 150 characters yielded poor results, a longer length would be beneficial, but ultimately computationally too expensive for this analysis).
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/bert_model_summary.png" alt="bert_model_summary" width="50%" height="50%"/>
 
-Mention stacked model? Mention trim to 150 characters?
+Mention stacked model? 
 
-### [3. Predictive Model II: "NSFC" Target Variable](https://www.nba.com/stats/) <br>
+### [3. Predictive Model II: "nsfc" Target Variable](https://www.nba.com/stats/) <br>
 
 Upon deeper analysis of the "over_18", it was clear this variable indicated if the content of a post contained an R/adult rating, generally denoted by the terms "NSFW","NFSL","Graphic", and "Graphic Warning". However we I reviewed the titles of posts without an "over_18" rating, many still contained "Graphic" "Warnings". Thus I created an additional variable: "nsfc" (Not Suitable For Children), that labeled all posts with the terms: "nsfw", "nsfl", "graphic", "kill", "execution" , "decapitation", "rape", and "dismember", which I believe more fully captures all content not suitable for children (this time model were to be put into production, business stakeholders would need to be consulted on final terms to qualify censorship).
 
