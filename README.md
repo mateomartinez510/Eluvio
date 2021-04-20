@@ -34,23 +34,23 @@ Target variable: "over_18" feature <br>
 
 After completing EDA and some exploratory modeling, I determined that complexity of applying NLP to the "title" feature required a deep learning framework, and conceded that my initial attempt at applying traditional models with a TF-IDF vectors was unsuccessful. My initial intent was to use a BERT deep learning model to predictive the number of "up_votes" a post received, but after numerous attempts of model tuning, the algorithm would only predict values very close to be mean, and determined in this use case (and in general) that the BERT model is not suited for linear regression. Thus I changed my target dependent variable to "over_18" and used a BERT algorithm for the model. 
 
-Below is the model summary for the BERT model, which was used for both classifiers. After numerous iterations of model turning, what yielded the best results (optimizing for recall, given the lack of samples from the minority class) was a higher dropout rate, smaller proportion of samples from the majority class, and longer "max_len" for the BERT encoded word embeddings (attempts to use less than 150 characters yielded poor results, a longer length would be beneficial, but ultimately computationally too expensive for this analysis).
+Below is the model summary for the BERT model, which was used for both classifiers. After numerous iterations of model turning, what yielded the best results (optimizing for recall, given the lack of samples from the minority class) was a higher dropout rate, smaller proportion of samples from the majority class, and longer "max_len" for the BERT encoded word embeddings (attempts to use less than 150 characters yielded poor results, a longer length would be beneficial, but ultimately computationally too expensive for this analysis).<br>
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/bert_model_summary.png" alt="bert_model_summary" width="50%" height="50%"/>
 
-Below is the loss and accuracy for the training and validation sets during the BERT training process. Given the class imbalances, class weights were used with a 30:1 ratio to improve recall on the minority class.
+Below is the loss and accuracy for the training and validation sets during the BERT training process. Given the class imbalances, class weights were used with a 30:1 ratio to improve recall on the minority class.<br>
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/over_18_loss_accuracy_training.png" alt="bert_training_loss_acc_over_18" width="50%" height="50%"/>
 
-After training the BERT model, I applied a stacked ensemble model approach to take the outputs of the BERT model and combine them with the other tabular data features from the wrangling process to train a XGBoost model. This stacked model increased precision by 8%. Below is the classification report and confusion matrix from the stacked model
+After training the BERT model, I applied a stacked ensemble model approach to take the outputs of the BERT model and combine them with the other tabular data features from the wrangling process to train a XGBoost model. This stacked model increased precision by 8%. Below is the classification report and confusion matrix from the stacked model.<br>
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/over_18_matrix_stacked_model.png" alt="stacked_matrix_over_18" width="50%" height="50%"/>
 
 ### [Predictive Model II: "nsfc" Target Variable](https://www.nba.com/stats/) <br>
 
 Upon deeper analysis of the "over_18", it was clear this variable indicated if the content of a post contained an R/adult rating, generally denoted by the terms "NSFW","NFSL","Graphic", and "Graphic Warning". However we I reviewed the titles of posts without an "over_18" rating, many still contained "Graphic" "Warnings". Thus I created an additional variable: "nsfc" (Not Suitable For Children), that labeled all posts with the terms: "nsfw", "nsfl", "graphic", "kill", "execution" , "decapitation", "rape", and "dismember", which I believe more fully captures all content not suitable for children (this time model were to be put into production, business stakeholders would need to be consulted on final terms to qualify censorship).
 
-Below are the loss and accuracy metrics from the training process of the BERT model. This BERT model achieved over 97% accuracy, precision, recall, and F1-score for all metrics. Using the stacked model approach, I was able to increase all metrics to over 98%, which could be a signicicant difference depending on the business application. 
+Below are the loss and accuracy metrics from the training process of the BERT model. This BERT model achieved over 97% accuracy, precision, recall, and F1-score for all metrics. Using the stacked model approach, I was able to increase all metrics to over 98%, which could be a signicicant difference depending on the business application. <br>
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/nsfc_loss.png" alt="nsfc_loss_accuracy_metrics" width="50%" height="50%"/>
 
-Below is the classification report and confusion matrix from the stacked model.
+Below is the classification report and confusion matrix from the stacked model.<br>
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/nsfc_classifcation_matrix.png" alt="nsfc_classifcation_matrix" width="50%" height="50%"/>
 
 Thank you for taking the time to review my report. 
