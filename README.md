@@ -5,9 +5,9 @@
 <h3>Coding Challenge: Option 1 - Data Science/ML</h3>
 
 TL,DR: check out the three notebooks below for the Data Wrangling and two predictive models I trained:<br>
-[Data Wrangling & EDA Notebook](https://www.nba.com/stats/) <br>
-[Predictive Model I: "over_18" Target Variable](https://www.nba.com/stats/) <br>
-[Predictive Model II: "nsfc" Target Variable](https://www.nba.com/stats/) <br>
+[Data Wrangling & EDA Notebook](https://github.com/mateomartinez510/Eluvio/blob/main/Eluvio_Challenge_Data_Wrangling_EDA.ipynb) <br>
+[Predictive Model I: "over_18" Target Variable](https://github.com/mateomartinez510/Eluvio/blob/main/Eluvio_Challenge_Modeling(BERT_classification_over_18).ipynb) <br>
+[Predictive Model II: "nsfc" Target Variable](https://github.com/mateomartinez510/Eluvio/blob/main/Eluvio_Challenge_Modeling(BERT_classification_over_18).ipynb) <br>
 ("nsfc" is a new feature created to better capture all content "Not Suitable For Children") <br>
 
 ### Data Wrangling & EDA(LINK)
