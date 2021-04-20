@@ -53,10 +53,9 @@ Below are the loss and accuracy metrics from the training process of the BERT mo
 Below is the classification report and confusion matrix from the stacked model.<br>
 <img src="https://github.com/mateomartinez510/Eluvio/blob/main/images/nsfc_classifcation_matrix.png" alt="nsfc_classifcation_matrix" width="50%" height="50%"/>
 <br><br>
-Thank you for taking the time to review my report. <br>
-I look forward to discuss this together in the future.
+Thank you for taking the time to review my report and analysis. <br>
 
-Kind regards,
+Kind regards,<br>
 Mateo Martinez
 
 
